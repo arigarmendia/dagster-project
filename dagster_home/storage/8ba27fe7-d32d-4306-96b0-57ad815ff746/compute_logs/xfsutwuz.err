@@ -1,0 +1,8 @@
+[32m2024-12-03 14:30:34 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 8ba27fe7-d32d-4306-96b0-57ad815ff746 - 74508 - LOGS_CAPTURED - Started capturing logs in process (pid: 74508).
+[32m2024-12-03 14:30:34 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 8ba27fe7-d32d-4306-96b0-57ad815ff746 - 74508 - users - STEP_START - Started execution of step "users".
+[32m2024-12-03 14:30:34 -0300[0m - dagster - [34mINFO[0m - __ASSET_JOB - 8ba27fe7-d32d-4306-96b0-57ad815ff746 - users - Testing
+[32m2024-12-03 14:30:34 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 8ba27fe7-d32d-4306-96b0-57ad815ff746 - 74508 - users - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2024-12-03 14:30:34 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 8ba27fe7-d32d-4306-96b0-57ad815ff746 - users - Writing file at: /Users/ari/Desktop/github_repos/rec_sys/dagster_home/storage/users using PickledObjectFilesystemIOManager...
+[32m2024-12-03 14:30:34 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 8ba27fe7-d32d-4306-96b0-57ad815ff746 - 74508 - users - ASSET_MATERIALIZATION - Materialized value users.
+[32m2024-12-03 14:30:34 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 8ba27fe7-d32d-4306-96b0-57ad815ff746 - 74508 - users - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2024-12-03 14:30:34 -0300[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 8ba27fe7-d32d-4306-96b0-57ad815ff746 - 74508 - users - STEP_SUCCESS - Finished execution of step "users" in 33ms.
