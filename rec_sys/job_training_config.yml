@@ -1,0 +1,4 @@
+ops:
+  model_trained:
+    config:
+      batch_size: 128
