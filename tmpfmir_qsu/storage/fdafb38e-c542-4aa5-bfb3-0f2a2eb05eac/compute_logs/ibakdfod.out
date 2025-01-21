@@ -1,0 +1,319 @@
+2025-01-15 19:28:21 [46mplatform[0m > Using job log path: /workspace/129/0/logs.log
+2025-01-15 19:28:21 [46mplatform[0m > Executing worker wrapper. Airbyte version: 1.1.0
+2025-01-15 19:28:21 [46mplatform[0m > Creating workload 2b892265-33f5-4631-9307-4de7cd06b3a6_129_0_sync
+2025-01-15 19:28:21 [32mINFO[m i.a.w.l.p.s.m.Stage(apply):39 - APPLY Stage: CLAIM — (workloadId = 2b892265-33f5-4631-9307-4de7cd06b3a6_129_0_sync) — (dataplaneId = local)
+2025-01-15 19:28:32 [32mINFO[m i.m.r.Micronaut(start):101 - Startup completed in 2360ms. Server Running: http://replication-job-129-attempt-0:9000
+2025-01-15 19:28:33 [46mreplication-orchestrator[0m > Setting up source...
+2025-01-15 19:28:32 [32mINFO[m i.a.f.ConfigFileClient(<init>):113 - path /flags does not exist, will return default flag values
+2025-01-15 19:28:32 [33mWARN[m i.a.m.l.MetricClientFactory(initialize):72 - MetricClient was not recognized or not provided. Accepted values are `datadog` or `otel`. 
+2025-01-15 19:28:48 [32mINFO[m i.a.a.SegmentAnalyticsClient(close):232 - Closing Segment analytics client...
+2025-01-15 19:28:48 [32mINFO[m i.a.a.BlockingShutdownAnalyticsPlugin(waitForFlush):288 - Waiting for Segment analytic client to flush enqueued messages...
+2025-01-15 19:28:48 [32mINFO[m i.a.a.BlockingShutdownAnalyticsPlugin(waitForFlush):300 - Segment analytic client flush complete.
+2025-01-15 19:28:48 [32mINFO[m i.a.a.SegmentAnalyticsClient(close):236 - Segment analytics client closed.  No new events will be accepted.
+2025-01-15 19:28:33 [46mreplication-orchestrator[0m > Setting up destination...
+2025-01-15 19:28:33 [46mreplication-orchestrator[0m > Setting up replication worker...
+2025-01-15 19:28:33 [46mreplication-orchestrator[0m > starting state flush thread for connectionId 2b892265-33f5-4631-9307-4de7cd06b3a6
+2025-01-15 19:28:33 [46mreplication-orchestrator[0m > Using ClosableLinkedBlockingQueue
+2025-01-15 19:28:33 [46mreplication-orchestrator[0m > Using ClosableLinkedBlockingQueue
+2025-01-15 19:28:33 [46mreplication-orchestrator[0m > Running replication worker...
+2025-01-15 19:28:33 [46mreplication-orchestrator[0m > start sync worker. job id: 129 attempt id: 0
+2025-01-15 19:28:33 [46mreplication-orchestrator[0m > 
+2025-01-15 19:28:33 [46mreplication-orchestrator[0m > ----- START REPLICATION -----
+2025-01-15 19:28:33 [46mreplication-orchestrator[0m > 
+2025-01-15 19:28:33 [46mreplication-orchestrator[0m > Number of Resumed Full Refresh Streams: {0}
+2025-01-15 19:28:33 [46mreplication-orchestrator[0m > Running destination...
+2025-01-15 19:28:33 [46mreplication-orchestrator[0m > Writing messages to protocol version 0.2.0
+2025-01-15 19:28:33 [46mreplication-orchestrator[0m > Reading messages from protocol version 0.2.0
+2025-01-15 19:28:33 [46mreplication-orchestrator[0m > Reading messages from protocol version 0.2.0
+2025-01-15 19:28:33 [46mreplication-orchestrator[0m > Starting workload heartbeat
+2025-01-15 19:28:33 [46mreplication-orchestrator[0m > readFromSource: start
+2025-01-15 19:28:33 [46mreplication-orchestrator[0m > Starting source heartbeat check. Will check threshold of 10800 seconds, every 1 minutes.
+2025-01-15 19:28:33 [46mreplication-orchestrator[0m > writeToDestination: start
+2025-01-15 19:28:33 [46mreplication-orchestrator[0m > processMessage: start
+2025-01-15 19:28:33 [46mreplication-orchestrator[0m > readFromDestination: start
+2025-01-15 19:28:34 [43mdestination[0m > INFO main i.a.i.d.p.PostgresDestination$Companion(main):219 starting destination: class io.airbyte.integrations.destination.postgres.PostgresDestination
+2025-01-15 19:28:34 [43mdestination[0m > INFO main i.a.c.i.b.IntegrationCliParser$Companion(parseOptions):144 integration args: {catalog=/dest/catalog.json, write=null, config=/dest/connectorConfig.json}
+2025-01-15 19:28:34 [43mdestination[0m > INFO main i.a.c.i.b.IntegrationRunner(runInternal):130 Running integration: io.airbyte.cdk.integrations.base.ssh.SshWrappedDestination
+2025-01-15 19:28:34 [43mdestination[0m > INFO main i.a.c.i.b.IntegrationRunner(runInternal):131 Command: WRITE
+2025-01-15 19:28:34 [43mdestination[0m > INFO main i.a.c.i.b.IntegrationRunner(runInternal):132 Integration config: IntegrationConfig{command=WRITE, configPath='/dest/connectorConfig.json', catalogPath='/dest/catalog.json', statePath='null'}
+2025-01-15 19:28:34 [43mdestination[0m > WARN main c.n.s.UnknownKeywordFactory(lambda$getKeyword$0):37 Unknown keyword order - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword or if it should generate annotations AnnotationKeyword
+2025-01-15 19:28:34 [43mdestination[0m > WARN main c.n.s.UnknownKeywordFactory(lambda$getKeyword$0):37 Unknown keyword airbyte_secret - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword or if it should generate annotations AnnotationKeyword
+2025-01-15 19:28:34 [43mdestination[0m > WARN main c.n.s.UnknownKeywordFactory(lambda$getKeyword$0):37 Unknown keyword multiline - you should define your own Meta Schema. If the keyword is irrelevant for validation, just use a NonValidationKeyword or if it should generate annotations AnnotationKeyword
+2025-01-15 19:28:34 [43mdestination[0m > INFO main i.a.c.i.b.s.SshWrappedDestination(getSerializedMessageConsumer):112 No SSH connection options found, using defaults
+2025-01-15 19:28:34 [43mdestination[0m > INFO main i.a.c.i.b.s.SshTunnel$Companion(getInstance):423 Starting connection with method: NO_TUNNEL
+2025-01-15 19:28:34 [43mdestination[0m > INFO main c.z.h.HikariDataSource(<init>):79 HikariPool-1 - Starting...
+2025-01-15 19:28:34 [43mdestination[0m > INFO main c.z.h.HikariDataSource(<init>):81 HikariPool-1 - Start completed.
+2025-01-15 19:28:34 [43mdestination[0m > INFO main i.a.i.b.d.t.CatalogParser(parseCatalog):132 Running sync with stream configs: [StreamConfig(id=StreamId(finalNamespace=source, finalName=users, rawNamespace=airbyte_internal, rawName=source_raw__stream_users, originalNamespace=source, originalName=users), postImportAction=DEDUPE, primaryKey=[ColumnId(name=id, originalName=id, canonicalName=id)], cursor=Optional.empty, columns={ColumnId(name=id, originalName=id, canonicalName=id)=NUMBER, ColumnId(name=index, originalName=index, canonicalName=index)=NUMBER, ColumnId(name=Occupation, originalName=Occupation, canonicalName=Occupation)=STRING, ColumnId(name=Active_Since, originalName=Active Since, canonicalName=Active_Since)=STRING}, generationId=57, minimumGenerationId=57, syncId=129)]
+2025-01-15 19:28:34 [43mdestination[0m > INFO main i.a.c.i.d.a.b.BufferManager(<init>):48 Max 'memory' available for buffer allocation 614 MB
+2025-01-15 19:28:34 [43mdestination[0m > INFO main i.a.c.i.b.IntegrationRunner$Companion(consumeWriteStream$io_airbyte_airbyte_cdk_java_airbyte_cdk_airbyte_cdk_core):406 Starting buffered read of input stream
+2025-01-15 19:28:34 [43mdestination[0m > INFO pool-3-thread-1 i.a.c.i.d.a.b.BufferManager(printQueueInfo):94 [ASYNC QUEUE INFO] Global: max: 614.4 MB, allocated: 10 MB (10.0 MB), %% used: 0.016276041676772164 | State Manager memory usage: Allocated: 10 MB, Used: 0 bytes, percentage Used 0.0
+2025-01-15 19:28:34 [43mdestination[0m > INFO main i.a.c.i.d.a.FlushWorkers(start):73 Start async buffer supervisor
+2025-01-15 19:28:34 [43mdestination[0m > INFO main i.a.c.i.d.a.AsyncStreamConsumer(start):89 class io.airbyte.cdk.integrations.destination.async.AsyncStreamConsumer started.
+2025-01-15 19:28:34 [43mdestination[0m > INFO pool-6-thread-1 i.a.c.i.d.a.FlushWorkers(printWorkerInfo):127 [ASYNC WORKER INFO] Pool queue size: 0, Active threads: 0
+2025-01-15 19:28:34 [43mdestination[0m > INFO main i.a.c.i.d.j.t.JdbcDestinationHandler(execute):172 Executing sql f1a0a8cb-68c8-44c3-9338-0320213d5bfb-2f2bf477-1da5-45e2-8a1c-bc1361c141b6: [create schema if not exists "airbyte_internal";]
+[create schema if not exists "source";]
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):65 executing query within transaction: create schema if not exists "airbyte_internal";
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):69 done executing query within transaction: create schema if not exists "airbyte_internal";
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.i.d.j.t.JdbcDestinationHandler(execute):184 Sql f1a0a8cb-68c8-44c3-9338-0320213d5bfb-2f2bf477-1da5-45e2-8a1c-bc1361c141b6 completed in 260 ms
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.i.d.j.t.JdbcDestinationHandler(execute):172 Executing sql f1a0a8cb-68c8-44c3-9338-0320213d5bfb-6bdf65ac-0c62-4a57-878b-84b43d82d89c: [create schema if not exists "airbyte_internal";]
+[create schema if not exists "source";]
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):65 executing query within transaction: create schema if not exists "source";
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):69 done executing query within transaction: create schema if not exists "source";
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.i.d.j.t.JdbcDestinationHandler(execute):184 Sql f1a0a8cb-68c8-44c3-9338-0320213d5bfb-6bdf65ac-0c62-4a57-878b-84b43d82d89c completed in 10 ms
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.i.b.d.t.BaseDestinationV1V2Migrator(migrateIfNecessary):19 Assessing whether migration is necessary for stream users
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.i.b.d.t.BaseDestinationV1V2Migrator(shouldMigrate):43 Checking whether v1 raw table _airbyte_raw_users in dataset source exists
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.c.i.d.j.t.JdbcDestinationHandler$Companion(findExistingTable$lambda$1):540 Retrieving existing columns for mlops.airbyte_internal.source_raw__stream_users
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.c.i.d.j.t.JdbcDestinationHandler$Companion(findExistingTable$lambda$1):540 Retrieving existing columns for mlops.source._airbyte_raw_users
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.i.b.d.t.BaseDestinationV1V2Migrator(shouldMigrate):50 Migration Info: Required for Sync mode: false, No existing v2 raw tables: false, A v1 raw table exists: false
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.i.b.d.t.BaseDestinationV1V2Migrator(migrateIfNecessary):30 No Migration Required for stream: users
+2025-01-15 19:28:35 [43mdestination[0m > INFO ForkJoinPool.commonPool-worker-1 i.a.c.d.j.JdbcDatabase(execute$lambda$0):50 executing statement: create table if not exists "airbyte_internal"."_airbyte_destination_state" ("name" varchar, "namespace" varchar, "destination_state" varchar, "updated_at" timestamp with time zone)
+2025-01-15 19:28:35 [43mdestination[0m > INFO ForkJoinPool.commonPool-worker-1 i.a.c.d.j.JdbcDatabase(execute$lambda$0):54 statement successfully executed
+2025-01-15 19:28:35 [43mdestination[0m > INFO ForkJoinPool.commonPool-worker-1 i.a.c.d.j.DefaultJdbcDatabase(unsafeQuery$lambda$6):127 closing connection
+2025-01-15 19:28:35 [43mdestination[0m > INFO ForkJoinPool.commonPool-worker-1 i.a.c.i.d.j.t.JdbcDestinationHandler$Companion(findExistingTable$lambda$1):540 Retrieving existing columns for mlops.source.users
+2025-01-15 19:28:35 [43mdestination[0m > INFO ForkJoinPool.commonPool-worker-1 i.a.c.d.j.DefaultJdbcDatabase(unsafeQuery$lambda$6):127 closing connection
+2025-01-15 19:28:35 [43mdestination[0m > INFO ForkJoinPool.commonPool-worker-1 i.a.c.i.d.j.t.JdbcDestinationHandler(getInitialRawTableState$lambda$1):95 Retrieving table from Db metadata: mlops airbyte_internal source_raw__stream_users
+2025-01-15 19:28:35 [43mdestination[0m > INFO ForkJoinPool.commonPool-worker-1 i.a.c.d.j.DefaultJdbcDatabase(unsafeQuery$lambda$6):127 closing connection
+2025-01-15 19:28:35 [43mdestination[0m > INFO ForkJoinPool.commonPool-worker-1 i.a.c.d.j.DefaultJdbcDatabase(unsafeQuery$lambda$6):127 closing connection
+2025-01-15 19:28:35 [43mdestination[0m > INFO ForkJoinPool.commonPool-worker-1 i.a.c.i.d.j.t.JdbcDestinationHandler(getInitialRawTableState$lambda$1):95 Retrieving table from Db metadata: mlops airbyte_internal source_raw__stream_users
+2025-01-15 19:28:35 [43mdestination[0m > INFO ForkJoinPool.commonPool-worker-1 i.a.c.d.j.DefaultJdbcDatabase(unsafeQuery$lambda$6):127 closing connection
+2025-01-15 19:28:35 [43mdestination[0m > INFO ForkJoinPool.commonPool-worker-1 i.a.c.d.j.DefaultJdbcDatabase(unsafeQuery$lambda$6):127 closing connection
+2025-01-15 19:28:35 [43mdestination[0m > INFO ForkJoinPool.commonPool-worker-1 i.a.i.d.p.PostgresGenerationHandler(getGenerationIdInTable):48 found generationId in table airbyte_internal.source_raw__stream_users: 56
+2025-01-15 19:28:35 [43mdestination[0m > INFO ForkJoinPool.commonPool-worker-1 i.a.c.d.j.DefaultJdbcDatabase(unsafeQuery$lambda$6):127 closing connection
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.i.b.d.t.TyperDeduperUtil(runMigrationsAsync$lambda$12):165 Maybe executing PostgresRawTableAirbyteMetaMigration migration for stream source.users.
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.c.i.d.j.t.JdbcDestinationHandler$Companion(findExistingTable$lambda$1):540 Retrieving existing columns for mlops.airbyte_internal.source_raw__stream_users
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.i.b.d.t.TyperDeduperUtil(runMigrationsAsync$lambda$12):165 Maybe executing PostgresGenerationIdMigration migration for stream source.users.
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.c.i.d.j.t.JdbcDestinationHandler$Companion(findExistingTable$lambda$1):540 Retrieving existing columns for mlops.airbyte_internal.source_raw__stream_users
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.g.o.k.KLogger$DefaultImpls(info):534 Skipping migration for airbyte_internal.source_raw__stream_users's raw table because the generation_id column is already present
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.c.i.d.j.t.JdbcDestinationHandler$Companion(findExistingTable$lambda$1):540 Retrieving existing columns for mlops.source.users
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.g.o.k.KLogger$DefaultImpls(info):534 Skipping migration for source.users because the generation_id column is already present
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):65 executing query within transaction: delete from "airbyte_internal"."_airbyte_destination_state" where ("name" = 'users' and "namespace" = 'source')
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):69 done executing query within transaction: delete from "airbyte_internal"."_airbyte_destination_state" where ("name" = 'users' and "namespace" = 'source')
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):65 executing query within transaction: insert into "airbyte_internal"."_airbyte_destination_state" ("name", "namespace", "destination_state", "updated_at") values ('users', 'source', '{"needsSoftReset":false,"airbyteMetaPresentInRaw":true,"airbyteGenerationIdPresent":true}', '2025-01-15T19:28:35.734202629Z')
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):69 done executing query within transaction: insert into "airbyte_internal"."_airbyte_destination_state" ("name", "namespace", "destination_state", "updated_at") values ('users', 'source', '{"needsSoftReset":false,"airbyteMetaPresentInRaw":true,"airbyteGenerationIdPresent":true}', '2025-01-15T19:28:35.734202629Z')
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.DefaultJdbcDatabase(unsafeQuery$lambda$6):127 closing connection
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.DefaultJdbcDatabase(unsafeQuery$lambda$6):127 closing connection
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.i.d.p.PostgresGenerationHandler(getGenerationIdInTable):48 found generationId in table airbyte_internal.source_raw__stream_users: 56
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.i.d.j.JdbcBufferedConsumerFactory(onStartFunction$lambda$2):184 Preparing raw tables in destination started for 1 streams
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.i.d.j.JdbcBufferedConsumerFactory(onStartFunction$lambda$2):191 Preparing raw table in destination started for stream users. schema: airbyte_internal, table name: source_raw__stream_users
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(execute$lambda$0):50 executing statement: CREATE SCHEMA IF NOT EXISTS airbyte_internal;
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(execute$lambda$0):54 statement successfully executed
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(execute$lambda$0):50 executing statement: CREATE TABLE IF NOT EXISTS airbyte_internal.source_raw__stream_users (
+  _airbyte_raw_id VARCHAR PRIMARY KEY,
+  _airbyte_data JSONB,
+  _airbyte_extracted_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  _airbyte_loaded_at TIMESTAMP WITH TIME ZONE DEFAULT NULL,
+  _airbyte_meta JSONB,
+  _airbyte_generation_id BIGINT
+);
+
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(execute$lambda$0):54 statement successfully executed
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(execute$lambda$0):50 executing statement: CREATE INDEX IF NOT EXISTS source_raw__stream_users_raw_id ON airbyte_internal.source_raw__stream_users(_airbyte_raw_id)
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(execute$lambda$0):54 statement successfully executed
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(execute$lambda$0):50 executing statement: CREATE INDEX IF NOT EXISTS source_raw__stream_users_extracted_at ON airbyte_internal.source_raw__stream_users(_airbyte_extracted_at)
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(execute$lambda$0):54 statement successfully executed
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(execute$lambda$0):50 executing statement: CREATE INDEX IF NOT EXISTS source_raw__stream_users_loaded_at ON airbyte_internal.source_raw__stream_users(_airbyte_loaded_at, _airbyte_extracted_at)
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(execute$lambda$0):54 statement successfully executed
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(execute$lambda$0):50 executing statement: CREATE TABLE IF NOT EXISTS airbyte_internal.source_raw__stream_users_airbyte_tmp (
+  _airbyte_raw_id VARCHAR PRIMARY KEY,
+  _airbyte_data JSONB,
+  _airbyte_extracted_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+  _airbyte_loaded_at TIMESTAMP WITH TIME ZONE DEFAULT NULL,
+  _airbyte_meta JSONB,
+  _airbyte_generation_id BIGINT
+);
+
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(execute$lambda$0):54 statement successfully executed
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(execute$lambda$0):50 executing statement: CREATE INDEX IF NOT EXISTS source_raw__stream_users_airbyte_tmp_raw_id ON airbyte_internal.source_raw__stream_users_airbyte_tmp(_airbyte_raw_id)
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(execute$lambda$0):54 statement successfully executed
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(execute$lambda$0):50 executing statement: CREATE INDEX IF NOT EXISTS source_raw__stream_users_airbyte_tmp_extracted_at ON airbyte_internal.source_raw__stream_users_airbyte_tmp(_airbyte_extracted_at)
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(execute$lambda$0):54 statement successfully executed
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(execute$lambda$0):50 executing statement: CREATE INDEX IF NOT EXISTS source_raw__stream_users_airbyte_tmp_loaded_at ON airbyte_internal.source_raw__stream_users_airbyte_tmp(_airbyte_loaded_at, _airbyte_extracted_at)
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(execute$lambda$0):54 statement successfully executed
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.DefaultJdbcDatabase(unsafeQuery$lambda$6):127 closing connection
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.DefaultJdbcDatabase(unsafeQuery$lambda$6):127 closing connection
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(execute$lambda$0):50 executing statement: BEGIN;
+TRUNCATE TABLE airbyte_internal.source_raw__stream_users_airbyte_tmp;
+COMMIT;
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(execute$lambda$0):54 statement successfully executed
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.i.d.j.JdbcBufferedConsumerFactory(onStartFunction$lambda$2):227 Preparing raw tables in destination completed.
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.i.b.d.t.DefaultTyperDeduper(prepareFinalTables):124 Preparing tables
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.i.b.d.t.DefaultTyperDeduper(prepareTablesFuture$lambda$4):157 Final Table exists for stream users
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.i.b.d.t.DefaultTyperDeduper(prepareTablesFuture$lambda$4):166 Using temp final table
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.i.b.d.t.DefaultTyperDeduper(prepareTablesFuture$lambda$4):174 Recreating temp final table
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.c.i.d.j.t.JdbcDestinationHandler(execute):172 Executing sql 40e7168a-f81e-45b0-b7bc-0c0558fd722e-a8288a52-7873-4e9c-96e4-81be19de29d7: [drop table if exists "source"."users_airbyte_tmp";, create table "source"."users_airbyte_tmp" ("id" decimal(38, 9), "index" decimal(38, 9), "Occupation" varchar, "Active_Since" varchar, "_airbyte_raw_id" varchar(36) not null, "_airbyte_extracted_at" timestamp with time zone not null, "_airbyte_generation_id" bigint, "_airbyte_meta" jsonb not null);]
+[create index on "source"."users_airbyte_tmp"("id", "_airbyte_extracted_at");]
+[create index on "source"."users_airbyte_tmp"("_airbyte_extracted_at");]
+[create index on "source"."users_airbyte_tmp"("_airbyte_raw_id");]
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):65 executing query within transaction: drop table if exists "source"."users_airbyte_tmp";
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):69 done executing query within transaction: drop table if exists "source"."users_airbyte_tmp";
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):65 executing query within transaction: create table "source"."users_airbyte_tmp" ("id" decimal(38, 9), "index" decimal(38, 9), "Occupation" varchar, "Active_Since" varchar, "_airbyte_raw_id" varchar(36) not null, "_airbyte_extracted_at" timestamp with time zone not null, "_airbyte_generation_id" bigint, "_airbyte_meta" jsonb not null);
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):69 done executing query within transaction: create table "source"."users_airbyte_tmp" ("id" decimal(38, 9), "index" decimal(38, 9), "Occupation" varchar, "Active_Since" varchar, "_airbyte_raw_id" varchar(36) not null, "_airbyte_extracted_at" timestamp with time zone not null, "_airbyte_generation_id" bigint, "_airbyte_meta" jsonb not null);
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.c.i.d.j.t.JdbcDestinationHandler(execute):184 Sql 40e7168a-f81e-45b0-b7bc-0c0558fd722e-a8288a52-7873-4e9c-96e4-81be19de29d7 completed in 17 ms
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.c.i.d.j.t.JdbcDestinationHandler(execute):172 Executing sql 40e7168a-f81e-45b0-b7bc-0c0558fd722e-eeddfc21-2b1c-4464-930d-9c5eaf654497: [drop table if exists "source"."users_airbyte_tmp";, create table "source"."users_airbyte_tmp" ("id" decimal(38, 9), "index" decimal(38, 9), "Occupation" varchar, "Active_Since" varchar, "_airbyte_raw_id" varchar(36) not null, "_airbyte_extracted_at" timestamp with time zone not null, "_airbyte_generation_id" bigint, "_airbyte_meta" jsonb not null);]
+[create index on "source"."users_airbyte_tmp"("id", "_airbyte_extracted_at");]
+[create index on "source"."users_airbyte_tmp"("_airbyte_extracted_at");]
+[create index on "source"."users_airbyte_tmp"("_airbyte_raw_id");]
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):65 executing query within transaction: create index on "source"."users_airbyte_tmp"("id", "_airbyte_extracted_at");
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):69 done executing query within transaction: create index on "source"."users_airbyte_tmp"("id", "_airbyte_extracted_at");
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.c.i.d.j.t.JdbcDestinationHandler(execute):184 Sql 40e7168a-f81e-45b0-b7bc-0c0558fd722e-eeddfc21-2b1c-4464-930d-9c5eaf654497 completed in 10 ms
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.c.i.d.j.t.JdbcDestinationHandler(execute):172 Executing sql 40e7168a-f81e-45b0-b7bc-0c0558fd722e-1ac223ea-2532-40d7-bdb2-3bc6dac94763: [drop table if exists "source"."users_airbyte_tmp";, create table "source"."users_airbyte_tmp" ("id" decimal(38, 9), "index" decimal(38, 9), "Occupation" varchar, "Active_Since" varchar, "_airbyte_raw_id" varchar(36) not null, "_airbyte_extracted_at" timestamp with time zone not null, "_airbyte_generation_id" bigint, "_airbyte_meta" jsonb not null);]
+[create index on "source"."users_airbyte_tmp"("id", "_airbyte_extracted_at");]
+[create index on "source"."users_airbyte_tmp"("_airbyte_extracted_at");]
+[create index on "source"."users_airbyte_tmp"("_airbyte_raw_id");]
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):65 executing query within transaction: create index on "source"."users_airbyte_tmp"("_airbyte_extracted_at");
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):69 done executing query within transaction: create index on "source"."users_airbyte_tmp"("_airbyte_extracted_at");
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.c.i.d.j.t.JdbcDestinationHandler(execute):184 Sql 40e7168a-f81e-45b0-b7bc-0c0558fd722e-1ac223ea-2532-40d7-bdb2-3bc6dac94763 completed in 8 ms
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.c.i.d.j.t.JdbcDestinationHandler(execute):172 Executing sql 40e7168a-f81e-45b0-b7bc-0c0558fd722e-c830a13b-a0bd-4365-8857-afc8937517a8: [drop table if exists "source"."users_airbyte_tmp";, create table "source"."users_airbyte_tmp" ("id" decimal(38, 9), "index" decimal(38, 9), "Occupation" varchar, "Active_Since" varchar, "_airbyte_raw_id" varchar(36) not null, "_airbyte_extracted_at" timestamp with time zone not null, "_airbyte_generation_id" bigint, "_airbyte_meta" jsonb not null);]
+[create index on "source"."users_airbyte_tmp"("id", "_airbyte_extracted_at");]
+[create index on "source"."users_airbyte_tmp"("_airbyte_extracted_at");]
+[create index on "source"."users_airbyte_tmp"("_airbyte_raw_id");]
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):65 executing query within transaction: create index on "source"."users_airbyte_tmp"("_airbyte_raw_id");
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):69 done executing query within transaction: create index on "source"."users_airbyte_tmp"("_airbyte_raw_id");
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.c.i.d.j.t.JdbcDestinationHandler(execute):184 Sql 40e7168a-f81e-45b0-b7bc-0c0558fd722e-c830a13b-a0bd-4365-8857-afc8937517a8 completed in 8 ms
+2025-01-15 19:28:35 [43mdestination[0m > INFO type-and-dedupe i.a.i.b.d.t.DefaultTyperDeduper(prepareTablesFuture$lambda$4):184 Using temp final table for stream users, will overwrite existing table at end of sync
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):65 executing query within transaction: delete from "airbyte_internal"."_airbyte_destination_state" where ("name" = 'users' and "namespace" = 'source')
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):69 done executing query within transaction: delete from "airbyte_internal"."_airbyte_destination_state" where ("name" = 'users' and "namespace" = 'source')
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):65 executing query within transaction: insert into "airbyte_internal"."_airbyte_destination_state" ("name", "namespace", "destination_state", "updated_at") values ('users', 'source', '{"needsSoftReset":false,"airbyteMetaPresentInRaw":true,"airbyteGenerationIdPresent":true}', '2025-01-15T19:28:35.941803963Z')
+2025-01-15 19:28:35 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):69 done executing query within transaction: insert into "airbyte_internal"."_airbyte_destination_state" ("name", "namespace", "destination_state", "updated_at") values ('users', 'source', '{"needsSoftReset":false,"airbyteMetaPresentInRaw":true,"airbyteGenerationIdPresent":true}', '2025-01-15T19:28:35.941803963Z')
+2025-01-15 19:28:36 [44msource[0m > Syncing stream: users (https://raw.githubusercontent.com/mlops-itba/Datos-RS/main/data/usuarios_0.csv)...
+2025-01-15 19:28:36 [44msource[0m > TransportParams: None
+2025-01-15 19:28:36 [46mreplication-orchestrator[0m > Stream status TRACE received of status: STARTED for stream users
+2025-01-15 19:28:36 [46mreplication-orchestrator[0m > Sending update for users - null -> RUNNING
+2025-01-15 19:28:36 [46mreplication-orchestrator[0m > Stream Status Update Received: users - RUNNING
+2025-01-15 19:28:36 [46mreplication-orchestrator[0m > Creating status: users - RUNNING
+2025-01-15 19:28:36 [44msource[0m > Marking stream users as RUNNING
+2025-01-15 19:28:36 [46mreplication-orchestrator[0m > Stream status TRACE received of status: RUNNING for stream users
+2025-01-15 19:28:36 [44msource[0m > Marking stream users as STOPPED
+2025-01-15 19:28:36 [46mreplication-orchestrator[0m > Stream status TRACE received of status: COMPLETE for stream users
+2025-01-15 19:28:36 [46mreplication-orchestrator[0m > Total records read: 380 (30 KB)
+2025-01-15 19:28:36 [46mreplication-orchestrator[0m > Schema validation was performed to a max of 10 records with errors per stream.
+2025-01-15 19:28:36 [46mreplication-orchestrator[0m > readFromSource: done. (source.isFinished:true, fromSource.isClosed:false)
+2025-01-15 19:28:36 [46mreplication-orchestrator[0m > thread status... heartbeat thread: false , replication thread: true
+2025-01-15 19:28:41 [46mreplication-orchestrator[0m > processMessage: done. (fromSource.isDone:true, forDest.isClosed:false)
+2025-01-15 19:28:46 [46mreplication-orchestrator[0m > writeToDestination: done. (forDest.isDone:true, isDestRunning:true)
+2025-01-15 19:28:46 [46mreplication-orchestrator[0m > thread status... timeout thread: false , replication thread: true
+2025-01-15 19:28:46 [43mdestination[0m > INFO main i.a.c.i.b.IntegrationRunner$Companion(consumeWriteStream$io_airbyte_airbyte_cdk_java_airbyte_cdk_airbyte_cdk_core):428 Finished buffered read of input stream
+2025-01-15 19:28:46 [43mdestination[0m > INFO main i.a.c.i.d.a.FlushWorkers(close):193 Closing flush workers -- waiting for all buffers to flush
+2025-01-15 19:28:46 [43mdestination[0m > INFO main i.a.c.i.d.a.FlushWorkers(close):226 REMAINING_BUFFERS_INFO
+  Namespace: null Stream: users -- remaining records: 377
+2025-01-15 19:28:46 [43mdestination[0m > INFO main i.a.c.i.d.a.FlushWorkers(close):227 Waiting for all streams to flush.
+2025-01-15 19:28:46 [43mdestination[0m > INFO pool-5-thread-1 i.a.c.i.d.a.DetectStreamToFlush(getNextStreamToFlush):109 flushing: trigger info: null - users, time trigger: false , size trigger: true current threshold b: 0 bytes, queue size b: 89.34 KB, penalty b: 0 bytes, after penalty b: 89.34 KB
+2025-01-15 19:28:46 [43mdestination[0m > INFO pool-4-thread-1 i.a.c.i.d.a.FlushWorkers(flush$lambda$6):135 Flush Worker (75910) -- Worker picked up work.
+2025-01-15 19:28:46 [43mdestination[0m > INFO pool-4-thread-1 i.a.c.i.d.a.FlushWorkers(flush$lambda$6):141 Flush Worker (75910) -- Attempting to read from queue namespace: null, stream: users.
+2025-01-15 19:28:46 [43mdestination[0m > INFO pool-4-thread-1 i.a.c.i.d.a.GlobalMemoryManager(free):78 Freeing 10394280 bytes..
+2025-01-15 19:28:46 [43mdestination[0m > INFO pool-4-thread-1 i.a.c.i.d.a.FlushWorkers(flush$lambda$6):159 Flush Worker (75910) -- Batch contains: 377 records, 89.34 KB bytes.
+2025-01-15 19:28:46 [43mdestination[0m > INFO pool-4-thread-1 i.a.i.d.p.PostgresSqlOperations(insertRecordsInternal):104 preparing records to insert. generationId=57, syncId=129
+2025-01-15 19:28:46 [43mdestination[0m > INFO pool-4-thread-1 i.a.i.d.p.PostgresSqlOperations(insertRecordsInternal$lambda$0):122 executing COPY command: COPY airbyte_internal.source_raw__stream_users_airbyte_tmp (_airbyte_raw_id, _airbyte_data, _airbyte_extracted_at, _airbyte_loaded_at, _airbyte_meta, _airbyte_generation_id) FROM stdin DELIMITER ',' CSV
+2025-01-15 19:28:46 [43mdestination[0m > INFO pool-4-thread-1 i.a.i.d.p.PostgresSqlOperations(insertRecordsInternal):137 COPY command completed sucessfully
+2025-01-15 19:28:46 [43mdestination[0m > INFO pool-4-thread-1 i.a.c.i.d.a.s.GlobalAsyncStateManager(flushStates):153 Flushing states
+2025-01-15 19:28:46 [43mdestination[0m > INFO pool-4-thread-1 i.a.c.i.d.a.s.GlobalAsyncStateManager(flushStates):207 Flushing states complete
+2025-01-15 19:28:46 [43mdestination[0m > INFO pool-4-thread-1 i.a.c.i.d.a.GlobalMemoryManager(free):78 Freeing 0 bytes..
+2025-01-15 19:28:46 [43mdestination[0m > INFO pool-4-thread-1 i.a.c.i.d.a.GlobalMemoryManager(free):78 Freeing 91480 bytes..
+2025-01-15 19:28:46 [43mdestination[0m > INFO pool-4-thread-1 i.a.c.i.d.a.FlushWorkers(flush$lambda$6):170 Flush Worker (75910) -- Worker finished flushing. Current queue size: 0
+2025-01-15 19:28:47 [43mdestination[0m > INFO main i.a.c.i.d.a.FlushWorkers(close):230 Closing flush workers -- all buffers flushed
+2025-01-15 19:28:47 [43mdestination[0m > INFO main i.a.c.i.d.a.s.GlobalAsyncStateManager(flushStates):153 Flushing states
+2025-01-15 19:28:47 [43mdestination[0m > INFO main i.a.c.i.d.a.s.GlobalAsyncStateManager(flushStates):207 Flushing states complete
+2025-01-15 19:28:47 [43mdestination[0m > INFO main i.a.c.i.d.a.GlobalMemoryManager(free):78 Freeing 0 bytes..
+2025-01-15 19:28:47 [43mdestination[0m > INFO main i.a.c.i.d.a.FlushWorkers(close):238 Closing flush workers -- supervisor shut down
+2025-01-15 19:28:47 [43mdestination[0m > INFO main i.a.c.i.d.a.FlushWorkers(close):240 Closing flush workers -- Starting worker pool shutdown..
+2025-01-15 19:28:47 [43mdestination[0m > INFO main i.a.c.i.d.a.FlushWorkers(close):245 Closing flush workers  -- workers shut down
+2025-01-15 19:28:47 [43mdestination[0m > INFO main i.a.c.i.d.a.b.BufferManager(close):73 Buffers cleared..
+2025-01-15 19:28:47 [43mdestination[0m > INFO main i.a.c.d.j.DefaultJdbcDatabase(unsafeQuery$lambda$6):127 closing connection
+2025-01-15 19:28:47 [43mdestination[0m > INFO main i.a.c.d.j.DefaultJdbcDatabase(unsafeQuery$lambda$6):127 closing connection
+2025-01-15 19:28:47 [43mdestination[0m > INFO main i.a.i.d.p.PostgresGenerationHandler(getGenerationIdInTable):48 found generationId in table airbyte_internal.source_raw__stream_users: 56
+2025-01-15 19:28:47 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):65 executing query within transaction: DROP TABLE airbyte_internal.source_raw__stream_users 
+2025-01-15 19:28:47 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):69 done executing query within transaction: DROP TABLE airbyte_internal.source_raw__stream_users 
+2025-01-15 19:28:47 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):65 executing query within transaction: ALTER TABLE airbyte_internal.source_raw__stream_users_airbyte_tmp RENAME TO source_raw__stream_users
+2025-01-15 19:28:47 [43mdestination[0m > INFO main i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):69 done executing query within transaction: ALTER TABLE airbyte_internal.source_raw__stream_users_airbyte_tmp RENAME TO source_raw__stream_users
+2025-01-15 19:28:47 [43mdestination[0m > INFO main i.a.i.b.d.t.DefaultTyperDeduper(typeAndDedupe):309 Typing and deduping all tables
+2025-01-15 19:28:47 [43mdestination[0m > INFO type-and-dedupe i.a.i.b.d.t.TyperDeduperUtil(executeTypeAndDedupe):212 Attempting typing and deduping for source.users with suffix _airbyte_tmp
+2025-01-15 19:28:47 [43mdestination[0m > INFO type-and-dedupe i.a.c.i.d.j.t.JdbcDestinationHandler(execute):172 Executing sql 6fcd790c-ad98-40f6-b84a-161162dfed62-f35bd6d7-e3f6-447d-95ec-224fe8859ffc: [insert into "source"."users_airbyte_tmp" ("id", "index", "Occupation", "Active_Since", "_airbyte_raw_id", "_airbyte_extracted_at", "_airbyte_generation_id", "_airbyte_meta") with "intermediate_data" as (select cast(case when ("_airbyte_data" -> 'id' is null or JSONB_TYPEOF("_airbyte_data" -> 'id') = 'null') then null else cast("_airbyte_data" -> 'id' as varchar) end as decimal(38, 9)) as "id", cast(case when ("_airbyte_data" -> 'index' is null or JSONB_TYPEOF("_airbyte_data" -> 'index') = 'null') then null else cast("_airbyte_data" -> 'index' as varchar) end as decimal(38, 9)) as "index", "_airbyte_data" -> 'Occupation' #>> '{}' as "Occupation", "_airbyte_data" -> 'Active Since' #>> '{}' as "Active_Since", "_airbyte_raw_id", "_airbyte_extracted_at", "_airbyte_generation_id", JSONB_BUILD_OBJECT('changes', ARRAY_CAT(ARRAY_REMOVE(cast(array[CASE WHEN ("_airbyte_data" -> 'id' is not null and JSONB_TYPEOF("_airbyte_data" -> 'id') <> 'null' and "pg_temp"."airbyte_safe_cast"(case when ("_airbyte_data" -> 'id' is null or JSONB_TYPEOF("_airbyte_data" -> 'id') = 'null') then null else cast("_airbyte_data" -> 'id' as varchar) end, cast(null as decimal(38, 9))) is null) THEN JSONB_BUILD_OBJECT('field', 'id', 'change', 'NULLED', 'reason', 'DESTINATION_TYPECAST_ERROR') ELSE cast(null as jsonb) END , CASE WHEN ("_airbyte_data" -> 'index' is not null and JSONB_TYPEOF("_airbyte_data" -> 'index') <> 'null' and "pg_temp"."airbyte_safe_cast"(case when ("_airbyte_data" -> 'index' is null or JSONB_TYPEOF("_airbyte_data" -> 'index') = 'null') then null else cast("_airbyte_data" -> 'index' as varchar) end, cast(null as decimal(38, 9))) is null) THEN JSONB_BUILD_OBJECT('field', 'index', 'change', 'NULLED', 'reason', 'DESTINATION_TYPECAST_ERROR') ELSE cast(null as jsonb) END , cast(null as jsonb), cast(null as jsonb)] as jsonb[]), null), ARRAY(SELECT jsonb_array_elements_text("_airbyte_meta"#>'{changes}'))::jsonb[]), 'sync_id', "_airbyte_meta"#>'{sync_id}') as "_airbyte_meta" from "airbyte_internal"."source_raw__stream_users" where ("_airbyte_loaded_at" is null and "_airbyte_extracted_at" > '2025-01-15T18:46:58Z')), "numbered_rows" as (select *, row_number() over (partition by "id" order by "_airbyte_extracted_at" desc) as "row_number" from "intermediate_data") select "id", "index", "Occupation", "Active_Since", "_airbyte_raw_id", "_airbyte_extracted_at", "_airbyte_generation_id", "_airbyte_meta" from "numbered_rows" where "row_number" = 1;, delete from "source"."users_airbyte_tmp" where "_airbyte_raw_id" in (select "_airbyte_raw_id" from (select "_airbyte_raw_id", row_number() over (partition by "id" order by "_airbyte_extracted_at" desc) as "row_number" from "source"."users_airbyte_tmp") as "airbyte_ids" where "row_number" <> 1);, update "airbyte_internal"."source_raw__stream_users" set "_airbyte_loaded_at" = current_timestamp where ("_airbyte_loaded_at" is null and "_airbyte_extracted_at" > '2025-01-15T18:46:58Z');]
+2025-01-15 19:28:47 [43mdestination[0m > INFO type-and-dedupe i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):65 executing query within transaction: insert into "source"."users_airbyte_tmp" ("id", "index", "Occupation", "Active_Since", "_airbyte_raw_id", "_airbyte_extracted_at", "_airbyte_generation_id", "_airbyte_meta") with "intermediate_data" as (select cast(case when ("_airbyte_data" -> 'id' is null or JSONB_TYPEOF("_airbyte_data" -> 'id') = 'null') then null else cast("_airbyte_data" -> 'id' as varchar) end as decimal(38, 9)) as "id", cast(case when ("_airbyte_data" -> 'index' is null or JSONB_TYPEOF("_airbyte_data" -> 'index') = 'null') then null else cast("_airbyte_data" -> 'index' as varchar) end as decimal(38, 9)) as "index", "_airbyte_data" -> 'Occupation' #>> '{}' as "Occupation", "_airbyte_data" -> 'Active Since' #>> '{}' as "Active_Since", "_airbyte_raw_id", "_airbyte_extracted_at", "_airbyte_generation_id", JSONB_BUILD_OBJECT('changes', ARRAY_CAT(ARRAY_REMOVE(cast(array[CASE WHEN ("_airbyte_data" -> 'id' is not null and JSONB_TYPEOF("_airbyte_data" -> 'id') <> 'null' and "pg_temp"."airbyte_safe_cast"(case when ("_airbyte_data" -> 'id' is null or JSONB_TYPEOF("_airbyte_data" -> 'id') = 'null') then null else cast("_airbyte_data" -> 'id' as varchar) end, cast(null as decimal(38, 9))) is null) THEN JSONB_BUILD_OBJECT('field', 'id', 'change', 'NULLED', 'reason', 'DESTINATION_TYPECAST_ERROR') ELSE cast(null as jsonb) END , CASE WHEN ("_airbyte_data" -> 'index' is not null and JSONB_TYPEOF("_airbyte_data" -> 'index') <> 'null' and "pg_temp"."airbyte_safe_cast"(case when ("_airbyte_data" -> 'index' is null or JSONB_TYPEOF("_airbyte_data" -> 'index') = 'null') then null else cast("_airbyte_data" -> 'index' as varchar) end, cast(null as decimal(38, 9))) is null) THEN JSONB_BUILD_OBJECT('field', 'index', 'change', 'NULLED', 'reason', 'DESTINATION_TYPECAST_ERROR') ELSE cast(null as jsonb) END , cast(null as jsonb), cast(null as jsonb)] as jsonb[]), null), ARRAY(SELECT jsonb_array_elements_text("_airbyte_meta"#>'{changes}'))::jsonb[]), 'sync_id', "_airbyte_meta"#>'{sync_id}') as "_airbyte_meta" from "airbyte_internal"."source_raw__stream_users" where ("_airbyte_loaded_at" is null and "_airbyte_extracted_at" > '2025-01-15T18:46:58Z')), "numbered_rows" as (select *, row_number() over (partition by "id" order by "_airbyte_extracted_at" desc) as "row_number" from "intermediate_data") select "id", "index", "Occupation", "Active_Since", "_airbyte_raw_id", "_airbyte_extracted_at", "_airbyte_generation_id", "_airbyte_meta" from "numbered_rows" where "row_number" = 1;
+2025-01-15 19:28:48 [43mdestination[0m > INFO type-and-dedupe i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):69 done executing query within transaction: insert into "source"."users_airbyte_tmp" ("id", "index", "Occupation", "Active_Since", "_airbyte_raw_id", "_airbyte_extracted_at", "_airbyte_generation_id", "_airbyte_meta") with "intermediate_data" as (select cast(case when ("_airbyte_data" -> 'id' is null or JSONB_TYPEOF("_airbyte_data" -> 'id') = 'null') then null else cast("_airbyte_data" -> 'id' as varchar) end as decimal(38, 9)) as "id", cast(case when ("_airbyte_data" -> 'index' is null or JSONB_TYPEOF("_airbyte_data" -> 'index') = 'null') then null else cast("_airbyte_data" -> 'index' as varchar) end as decimal(38, 9)) as "index", "_airbyte_data" -> 'Occupation' #>> '{}' as "Occupation", "_airbyte_data" -> 'Active Since' #>> '{}' as "Active_Since", "_airbyte_raw_id", "_airbyte_extracted_at", "_airbyte_generation_id", JSONB_BUILD_OBJECT('changes', ARRAY_CAT(ARRAY_REMOVE(cast(array[CASE WHEN ("_airbyte_data" -> 'id' is not null and JSONB_TYPEOF("_airbyte_data" -> 'id') <> 'null' and "pg_temp"."airbyte_safe_cast"(case when ("_airbyte_data" -> 'id' is null or JSONB_TYPEOF("_airbyte_data" -> 'id') = 'null') then null else cast("_airbyte_data" -> 'id' as varchar) end, cast(null as decimal(38, 9))) is null) THEN JSONB_BUILD_OBJECT('field', 'id', 'change', 'NULLED', 'reason', 'DESTINATION_TYPECAST_ERROR') ELSE cast(null as jsonb) END , CASE WHEN ("_airbyte_data" -> 'index' is not null and JSONB_TYPEOF("_airbyte_data" -> 'index') <> 'null' and "pg_temp"."airbyte_safe_cast"(case when ("_airbyte_data" -> 'index' is null or JSONB_TYPEOF("_airbyte_data" -> 'index') = 'null') then null else cast("_airbyte_data" -> 'index' as varchar) end, cast(null as decimal(38, 9))) is null) THEN JSONB_BUILD_OBJECT('field', 'index', 'change', 'NULLED', 'reason', 'DESTINATION_TYPECAST_ERROR') ELSE cast(null as jsonb) END , cast(null as jsonb), cast(null as jsonb)] as jsonb[]), null), ARRAY(SELECT jsonb_array_elements_text("_airbyte_meta"#>'{changes}'))::jsonb[]), 'sync_id', "_airbyte_meta"#>'{sync_id}') as "_airbyte_meta" from "airbyte_internal"."source_raw__stream_users" where ("_airbyte_loaded_at" is null and "_airbyte_extracted_at" > '2025-01-15T18:46:58Z')), "numbered_rows" as (select *, row_number() over (partition by "id" order by "_airbyte_extracted_at" desc) as "row_number" from "intermediate_data") select "id", "index", "Occupation", "Active_Since", "_airbyte_raw_id", "_airbyte_extracted_at", "_airbyte_generation_id", "_airbyte_meta" from "numbered_rows" where "row_number" = 1;
+2025-01-15 19:28:48 [43mdestination[0m > INFO type-and-dedupe i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):65 executing query within transaction: delete from "source"."users_airbyte_tmp" where "_airbyte_raw_id" in (select "_airbyte_raw_id" from (select "_airbyte_raw_id", row_number() over (partition by "id" order by "_airbyte_extracted_at" desc) as "row_number" from "source"."users_airbyte_tmp") as "airbyte_ids" where "row_number" <> 1);
+2025-01-15 19:28:48 [43mdestination[0m > INFO type-and-dedupe i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):69 done executing query within transaction: delete from "source"."users_airbyte_tmp" where "_airbyte_raw_id" in (select "_airbyte_raw_id" from (select "_airbyte_raw_id", row_number() over (partition by "id" order by "_airbyte_extracted_at" desc) as "row_number" from "source"."users_airbyte_tmp") as "airbyte_ids" where "row_number" <> 1);
+2025-01-15 19:28:48 [43mdestination[0m > INFO type-and-dedupe i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):65 executing query within transaction: update "airbyte_internal"."source_raw__stream_users" set "_airbyte_loaded_at" = current_timestamp where ("_airbyte_loaded_at" is null and "_airbyte_extracted_at" > '2025-01-15T18:46:58Z');
+2025-01-15 19:28:48 [43mdestination[0m > INFO type-and-dedupe i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):69 done executing query within transaction: update "airbyte_internal"."source_raw__stream_users" set "_airbyte_loaded_at" = current_timestamp where ("_airbyte_loaded_at" is null and "_airbyte_extracted_at" > '2025-01-15T18:46:58Z');
+2025-01-15 19:28:48 [43mdestination[0m > INFO type-and-dedupe i.a.c.i.d.j.t.JdbcDestinationHandler(execute):184 Sql 6fcd790c-ad98-40f6-b84a-161162dfed62-f35bd6d7-e3f6-447d-95ec-224fe8859ffc completed in 58 ms
+2025-01-15 19:28:48 [43mdestination[0m > INFO main i.a.i.b.d.t.DefaultTyperDeduper(commitFinalTables):355 Committing final tables
+2025-01-15 19:28:48 [43mdestination[0m > INFO type-and-dedupe i.a.i.b.d.t.DefaultTyperDeduper(commitFinalTableTask$lambda$8):394 Overwriting final table with tmp table for stream source.users
+2025-01-15 19:28:48 [43mdestination[0m > INFO type-and-dedupe i.a.c.i.d.j.t.JdbcDestinationHandler(execute):172 Executing sql d157c67f-6f50-43c7-8e10-bfedf4067bfe-691333b9-b32c-4afb-aeef-c7ee83f768d2: [drop table if exists "source"."users";, alter table "source"."users_airbyte_tmp" rename to "users";]
+2025-01-15 19:28:48 [43mdestination[0m > INFO type-and-dedupe i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):65 executing query within transaction: drop table if exists "source"."users";
+2025-01-15 19:28:48 [43mdestination[0m > INFO type-and-dedupe i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):69 done executing query within transaction: drop table if exists "source"."users";
+2025-01-15 19:28:48 [43mdestination[0m > INFO type-and-dedupe i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):65 executing query within transaction: alter table "source"."users_airbyte_tmp" rename to "users";
+2025-01-15 19:28:48 [43mdestination[0m > INFO type-and-dedupe i.a.c.d.j.JdbcDatabase(executeWithinTransaction$lambda$1):69 done executing query within transaction: alter table "source"."users_airbyte_tmp" rename to "users";
+2025-01-15 19:28:48 [43mdestination[0m > INFO type-and-dedupe i.a.c.i.d.j.t.JdbcDestinationHandler(execute):184 Sql d157c67f-6f50-43c7-8e10-bfedf4067bfe-691333b9-b32c-4afb-aeef-c7ee83f768d2 completed in 32 ms
+2025-01-15 19:28:48 [43mdestination[0m > INFO main i.a.i.b.d.t.DefaultTyperDeduper(cleanup):418 Cleaning Up type-and-dedupe thread pool
+2025-01-15 19:28:48 [43mdestination[0m > INFO main i.a.c.i.d.a.AsyncStreamConsumer(close):200 class io.airbyte.cdk.integrations.destination.async.AsyncStreamConsumer closed
+2025-01-15 19:28:48 [43mdestination[0m > INFO main i.a.c.i.b.IntegrationRunner(runInternal):224 Completed integration: io.airbyte.cdk.integrations.base.ssh.SshWrappedDestination
+2025-01-15 19:28:48 [43mdestination[0m > INFO main i.a.i.d.p.PostgresDestination$Companion(main):221 completed destination: class io.airbyte.integrations.destination.postgres.PostgresDestination
+2025-01-15 19:28:48 [46mreplication-orchestrator[0m > Destination finished successfully — exiting read dest...
+2025-01-15 19:28:48 [46mreplication-orchestrator[0m > readFromDestination: done. (writeToDestFailed:false, dest.isFinished:true)
+2025-01-15 19:28:48 [46mreplication-orchestrator[0m > thread status... timeout thread: false , replication thread: true
+2025-01-15 19:28:48 [46mreplication-orchestrator[0m > Closing StateCheckSumCountEventHandler
+2025-01-15 19:28:48 [46mreplication-orchestrator[0m > sync summary: {
+  "status" : "completed",
+  "recordsSynced" : 0,
+  "bytesSynced" : 0,
+  "startTime" : 1736969313463,
+  "endTime" : 1736969328273,
+  "totalStats" : {
+    "bytesCommitted" : 31160,
+    "bytesEmitted" : 31160,
+    "destinationStateMessagesEmitted" : 0,
+    "destinationWriteEndTime" : 1736969328207,
+    "destinationWriteStartTime" : 1736969313568,
+    "meanSecondsBeforeSourceStateMessageEmitted" : 0,
+    "maxSecondsBeforeSourceStateMessageEmitted" : 0,
+    "maxSecondsBetweenStateMessageEmittedandCommitted" : 0,
+    "meanSecondsBetweenStateMessageEmittedandCommitted" : 0,
+    "recordsEmitted" : 377,
+    "recordsCommitted" : 377,
+    "replicationEndTime" : 1736969328269,
+    "replicationStartTime" : 1736969313463,
+    "sourceReadEndTime" : 1736969316746,
+    "sourceReadStartTime" : 1736969313575,
+    "sourceStateMessagesEmitted" : 0
+  },
+  "streamStats" : [ {
+    "streamName" : "users",
+    "stats" : {
+      "bytesCommitted" : 31160,
+      "bytesEmitted" : 31160,
+      "recordsEmitted" : 377,
+      "recordsCommitted" : 377
+    }
+  } ],
+  "performanceMetrics" : {
+    "processFromSource" : {
+      "elapsedTimeInNanos" : 163009344,
+      "executionCount" : 380,
+      "avgExecTimeInNanos" : 428971.95789473684
+    },
+    "readFromSource" : {
+      "elapsedTimeInNanos" : 3132652386,
+      "executionCount" : 669,
+      "avgExecTimeInNanos" : 4682589.515695067
+    },
+    "processFromDest" : {
+      "elapsedTimeInNanos" : 0,
+      "executionCount" : 0,
+      "avgExecTimeInNanos" : "NaN"
+    },
+    "writeToDest" : {
+      "elapsedTimeInNanos" : 65052195,
+      "executionCount" : 377,
+      "avgExecTimeInNanos" : 172552.24137931035
+    },
+    "readFromDest" : {
+      "elapsedTimeInNanos" : 14604222196,
+      "executionCount" : 1937,
+      "avgExecTimeInNanos" : 7539608.774393392
+    }
+  }
+}
+2025-01-15 19:28:48 [46mreplication-orchestrator[0m > failures: [ ]
+2025-01-15 19:28:48 [46mreplication-orchestrator[0m > 
+2025-01-15 19:28:48 [46mreplication-orchestrator[0m > ----- END REPLICATION -----
+2025-01-15 19:28:48 [46mreplication-orchestrator[0m > 
+2025-01-15 19:28:48 [46mreplication-orchestrator[0m > Returning output...

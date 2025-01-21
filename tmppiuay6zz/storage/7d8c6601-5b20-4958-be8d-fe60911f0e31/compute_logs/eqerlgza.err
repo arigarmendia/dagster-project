@@ -1,0 +1,7 @@
+[32m2025-01-10 17:56:36 -0600[0m - dagster - [34mDEBUG[0m - get_data - 7d8c6601-5b20-4958-be8d-fe60911f0e31 - 67835 - LOGS_CAPTURED - Started capturing logs in process (pid: 67835).
+[32m2025-01-10 17:56:36 -0600[0m - dagster - [34mDEBUG[0m - get_data - 7d8c6601-5b20-4958-be8d-fe60911f0e31 - 67835 - scores - STEP_START - Started execution of step "scores".
+[32m2025-01-10 17:56:37 -0600[0m - dagster - [34mDEBUG[0m - get_data - 7d8c6601-5b20-4958-be8d-fe60911f0e31 - 67835 - scores - STEP_OUTPUT - Yielded output "result" of type "DataFrame". (Type check passed).
+[32m2025-01-10 17:56:37 -0600[0m - dagster - [34mDEBUG[0m - get_data - 7d8c6601-5b20-4958-be8d-fe60911f0e31 - scores - Writing file at: /Users/ari/Desktop/github_repos/rec_sys/tmppiuay6zz/storage/scores using PickledObjectFilesystemIOManager...
+[32m2025-01-10 17:56:37 -0600[0m - dagster - [34mDEBUG[0m - get_data - 7d8c6601-5b20-4958-be8d-fe60911f0e31 - 67835 - scores - ASSET_MATERIALIZATION - Materialized value scores.
+[32m2025-01-10 17:56:37 -0600[0m - dagster - [34mDEBUG[0m - get_data - 7d8c6601-5b20-4958-be8d-fe60911f0e31 - 67835 - scores - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2025-01-10 17:56:37 -0600[0m - dagster - [34mDEBUG[0m - get_data - 7d8c6601-5b20-4958-be8d-fe60911f0e31 - 67835 - scores - STEP_SUCCESS - Finished execution of step "scores" in 706ms.

@@ -1,0 +1,35 @@
+[32m2025-01-20 15:39:04 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - c08cfa1c-1cfe-400e-b4fc-557b9f44036b - 779 - LOGS_CAPTURED - Started capturing logs in process (pid: 779).
+[32m2025-01-20 15:39:04 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - c08cfa1c-1cfe-400e-b4fc-557b9f44036b - 779 - model_trained - STEP_START - Started execution of step "model_trained".
+[32m2025-01-20 15:39:04 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - c08cfa1c-1cfe-400e-b4fc-557b9f44036b - model_trained - Loading file from: /Users/ari/Desktop/github_repos/rec_sys/tmpfmir_qsu/storage/X_train using PickledObjectFilesystemIOManager...
+[32m2025-01-20 15:39:04 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - c08cfa1c-1cfe-400e-b4fc-557b9f44036b - 779 - model_trained - LOADED_INPUT - Loaded input "X_train" using input manager "io_manager"
+[32m2025-01-20 15:39:04 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - c08cfa1c-1cfe-400e-b4fc-557b9f44036b - model_trained - Loading file from: /Users/ari/Desktop/github_repos/rec_sys/tmpfmir_qsu/storage/movie2Idx using PickledObjectFilesystemIOManager...
+[32m2025-01-20 15:39:04 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - c08cfa1c-1cfe-400e-b4fc-557b9f44036b - 779 - model_trained - LOADED_INPUT - Loaded input "movie2Idx" using input manager "io_manager"
+[32m2025-01-20 15:39:04 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - c08cfa1c-1cfe-400e-b4fc-557b9f44036b - model_trained - Loading file from: /Users/ari/Desktop/github_repos/rec_sys/tmpfmir_qsu/storage/user2Idx using PickledObjectFilesystemIOManager...
+[32m2025-01-20 15:39:04 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - c08cfa1c-1cfe-400e-b4fc-557b9f44036b - 779 - model_trained - LOADED_INPUT - Loaded input "user2Idx" using input manager "io_manager"
+[32m2025-01-20 15:39:04 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - c08cfa1c-1cfe-400e-b4fc-557b9f44036b - model_trained - Loading file from: /Users/ari/Desktop/github_repos/rec_sys/tmpfmir_qsu/storage/y_train using PickledObjectFilesystemIOManager...
+[32m2025-01-20 15:39:04 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - c08cfa1c-1cfe-400e-b4fc-557b9f44036b - 779 - model_trained - LOADED_INPUT - Loaded input "y_train" using input manager "io_manager"
+[32m2025-01-20 15:39:04 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - c08cfa1c-1cfe-400e-b4fc-557b9f44036b - 779 - model_trained - STEP_INPUT - Got input "X_train" of type "Any". (Type check passed).
+[32m2025-01-20 15:39:04 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - c08cfa1c-1cfe-400e-b4fc-557b9f44036b - 779 - model_trained - STEP_INPUT - Got input "movie2Idx" of type "Any". (Type check passed).
+[32m2025-01-20 15:39:04 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - c08cfa1c-1cfe-400e-b4fc-557b9f44036b - 779 - model_trained - STEP_INPUT - Got input "user2Idx" of type "Any". (Type check passed).
+[32m2025-01-20 15:39:04 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - c08cfa1c-1cfe-400e-b4fc-557b9f44036b - 779 - model_trained - STEP_INPUT - Got input "y_train" of type "Any". (Type check passed).
+[32m2025-01-20 15:39:07 -0600[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - c08cfa1c-1cfe-400e-b4fc-557b9f44036b - 779 - model_trained - STEP_FAILURE - Execution of step "model_trained" failed.
+
+dagster._core.errors.DagsterExecutionStepExecutionError: Error occurred while executing op "model_trained"::
+
+ValueError: op_config is missing!
+
+Stack Trace:
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dagster/_core/execution/plan/utils.py", line 54, in op_execution_error_boundary
+    yield
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dagster/_utils/__init__.py", line 490, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 140, in _coerce_op_compute_fn_to_iterator
+    result = invoke_compute_fn(
+             ^^^^^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dagster/_core/execution/plan/compute_generator.py", line 128, in invoke_compute_fn
+    return fn(context, **args_to_pass) if context_arg_provided else fn(**args_to_pass)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ari/Desktop/github_repos/rec_sys/rec_sys/assets/train_model.py", line 79, in model_trained
+    raise ValueError("op_config is missing!")
+[0m

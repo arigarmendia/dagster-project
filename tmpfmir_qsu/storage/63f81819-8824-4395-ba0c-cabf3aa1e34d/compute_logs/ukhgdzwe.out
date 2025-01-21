@@ -1,0 +1,6 @@
+Running with dbt=1.8.8
+Error importing adapter: No module named 'dbt.adapters.postgres'
+Encountered an error:
+Runtime Error
+  Credentials in profile "db_postgres", target "dev" invalid: Runtime Error
+    Could not find adapter type postgres!

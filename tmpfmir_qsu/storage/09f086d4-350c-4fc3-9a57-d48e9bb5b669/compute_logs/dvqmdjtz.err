@@ -1,0 +1,31 @@
+[32m2025-01-18 16:42:24 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 09f086d4-350c-4fc3-9a57-d48e9bb5b669 - 35464 - LOGS_CAPTURED - Started capturing logs in process (pid: 35464).
+[32m2025-01-18 16:42:24 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 09f086d4-350c-4fc3-9a57-d48e9bb5b669 - 35464 - training_data - STEP_START - Started execution of step "training_data".
+[32m2025-01-18 16:42:24 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 09f086d4-350c-4fc3-9a57-d48e9bb5b669 - training_data - Loading file from: /Users/ari/Desktop/github_repos/rec_sys/tmpfmir_qsu/storage/scores_movies_users using PickledObjectFilesystemIOManager...
+[32m2025-01-18 16:42:24 -0600[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 09f086d4-350c-4fc3-9a57-d48e9bb5b669 - 35464 - training_data - STEP_FAILURE - Execution of step "training_data" failed.
+
+dagster._core.errors.DagsterExecutionLoadInputError: Error occurred while loading input "scores_movies_users" of step "training_data"::
+
+FileNotFoundError: [Errno 2] No such file or directory: '/Users/ari/Desktop/github_repos/rec_sys/tmpfmir_qsu/storage/scores_movies_users'
+
+Stack Trace:
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dagster/_core/execution/plan/utils.py", line 54, in op_execution_error_boundary
+    yield
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dagster/_core/execution/plan/inputs.py", line 620, in _load_input_with_input_manager
+    value = input_manager.load_input(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dagster/_core/storage/upath_io_manager.py", line 405, in load_input
+    return self._load_single_input(path, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dagster/_core/storage/upath_io_manager.py", line 272, in _load_single_input
+    obj = self.load_from_path(context=context, path=path)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dagster/_core/storage/fs_io_manager.py", line 283, in load_from_path
+    with path.open("rb") as file:
+         ^^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/upath/implementations/local.py", line 134, in open
+    return PosixPath.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[0m

@@ -1,0 +1,58 @@
+[32m2025-01-18 11:17:05 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 980ed927-852a-4739-9327-28267cde6347 - 42327 - LOGS_CAPTURED - Started capturing logs in process (pid: 42327).
+[32m2025-01-18 11:17:05 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - 980ed927-852a-4739-9327-28267cde6347 - 42327 - split_data - STEP_START - Started execution of step "split_data".
+[32m2025-01-18 11:17:06 -0600[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - 980ed927-852a-4739-9327-28267cde6347 - 42327 - split_data - STEP_FAILURE - Execution of step "split_data" failed.
+
+dagster._core.errors.DagsterExecutionLoadInputError: Error occurred while loading input "preprocessed_training_data" of step "split_data"::
+
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "target.preprocessed_training_data" does not exist
+LINE 1: SELECT * FROM target.preprocessed_training_data
+                      ^
+
+[SQL: SELECT * FROM target.preprocessed_training_data]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+
+Stack Trace:
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dagster/_core/execution/plan/utils.py", line 54, in op_execution_error_boundary
+    yield
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dagster/_core/execution/plan/inputs.py", line 620, in _load_input_with_input_manager
+    value = input_manager.load_input(context)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ari/Desktop/github_repos/rec_sys/rec_sys/resources/__init__.py", line 56, in load_input
+    return pd.read_sql(query, self.engine)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/pandas/io/sql.py", line 734, in read_sql
+    return pandas_sql.read_query(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/pandas/io/sql.py", line 1836, in read_query
+    result = self.execute(sql, params)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/pandas/io/sql.py", line 1659, in execute
+    return self.con.exec_driver_sql(sql, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1779, in exec_driver_sql
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+
+The above exception was caused by the following exception:
+psycopg2.errors.UndefinedTable: relation "target.preprocessed_training_data" does not exist
+LINE 1: SELECT * FROM target.preprocessed_training_data
+                      ^
+
+
+Stack Trace:
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+[0m

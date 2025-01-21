@@ -1,0 +1,74 @@
+[32m2025-01-15 21:14:13 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - f947f796-1a97-4c84-bb74-0e7cb04e7b08 - 32357 - LOGS_CAPTURED - Started capturing logs in process (pid: 32357).
+[32m2025-01-15 21:14:13 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - f947f796-1a97-4c84-bb74-0e7cb04e7b08 - 32357 - dbt_analytics - STEP_START - Started execution of step "dbt_analytics".
+[32m2025-01-15 21:14:13 -0600[0m - dagster - [34mINFO[0m - __ASSET_JOB - f947f796-1a97-4c84-bb74-0e7cb04e7b08 - dbt_analytics - A dbt subsetted execution is not being performed. Using the default dbt selection arguments `['--select', 'fqn:*']`.
+[32m2025-01-15 21:14:13 -0600[0m - dagster - [34mWARNING[0m - __ASSET_JOB - f947f796-1a97-4c84-bb74-0e7cb04e7b08 - dbt_analytics - An error was encountered when creating a handle to the dbt adapter in Dagster.
+Traceback (most recent call last):
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dagster_dbt/core/resource.py", line 672, in cli
+    adapter = self._initialize_adapter(cli_vars)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dagster_dbt/core/resource.py", line 364, in _initialize_adapter
+    profile = load_profile(self.project_dir, cli_vars, self.profile, self.target)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dbt/config/runtime.py", line 71, in load_profile
+    profile = Profile.render(
+              ^^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dbt/config/profile.py", line 403, in render
+    return cls.from_raw_profiles(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dbt/config/profile.py", line 360, in from_raw_profiles
+    raise DbtProjectError("Could not find profile named '{}'".format(profile_name))
+dbt.exceptions.DbtProjectError: Runtime Error
+  Could not find profile named 'db_postgres'
+[32m2025-01-15 21:14:13 -0600[0m - dagster - [34mINFO[0m - __ASSET_JOB - f947f796-1a97-4c84-bb74-0e7cb04e7b08 - dbt_analytics - Copying `/Users/ari/Desktop/github_repos/db_postgres/target/partial_parse.msgpack` to `/Users/ari/Desktop/github_repos/db_postgres/target/dbt_analytics-f947f79-4123298/partial_parse.msgpack` to take advantage of partial parsing.
+[32m2025-01-15 21:14:13 -0600[0m - dagster - [34mINFO[0m - __ASSET_JOB - f947f796-1a97-4c84-bb74-0e7cb04e7b08 - dbt_analytics - Running dbt command: `dbt run --select fqn:*`.
+[32m2025-01-15 21:14:15 -0600[0m - dagster - [34mINFO[0m - __ASSET_JOB - f947f796-1a97-4c84-bb74-0e7cb04e7b08 - dbt_analytics - Finished dbt command: `dbt run --select fqn:*`.
+[32m2025-01-15 21:14:15 -0600[0m - dagster - [34mERROR[0m - [31m__ASSET_JOB - f947f796-1a97-4c84-bb74-0e7cb04e7b08 - 32357 - dbt_analytics - STEP_FAILURE - Execution of step "dbt_analytics" failed.
+
+dagster_dbt.errors.DagsterDbtCliRuntimeError: The dbt CLI process with command
+
+`dbt run --select fqn:*`
+
+failed with exit code `2`. Check the stdout in the Dagster compute logs for the full information about the error, or view the dbt debug log: /Users/ari/Desktop/github_repos/db_postgres/target/dbt_analytics-f947f79-4123298/dbt.log.
+
+Errors parsed from dbt logs:
+
+Encountered an error:
+Runtime Error
+  Credentials in profile "db_postgres", target "dev" invalid: Runtime Error
+    Could not find adapter type postgres!
+
+Stack Trace:
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dagster/_core/execution/plan/execute_plan.py", line 245, in dagster_event_sequence_for_step
+    for step_event in check.generator(step_events):
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dagster/_core/execution/plan/execute_step.py", line 500, in core_dagster_event_sequence_for_step
+    for user_event in _step_output_error_checked_user_event_sequence(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dagster/_core/execution/plan/execute_step.py", line 183, in _step_output_error_checked_user_event_sequence
+    for user_event in user_event_sequence:
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dagster/_core/execution/plan/execute_step.py", line 87, in _process_asset_results_to_events
+    for user_event in user_event_sequence:
+                      ^^^^^^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dagster/_core/execution/plan/compute.py", line 193, in execute_core_compute
+    for step_output in _yield_compute_results(step_context, inputs, compute_fn, compute_context):
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dagster/_core/execution/plan/compute.py", line 162, in _yield_compute_results
+    for event in iterate_with_context(
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dagster/_utils/__init__.py", line 490, in iterate_with_context
+    next_output = next(iterator)
+                  ^^^^^^^^^^^^^^
+  File "/Users/ari/Desktop/github_repos/rec_sys/rec_sys/assets/dbt.py", line 10, in dbt_analytics
+    yield from dbt.cli(["run"], context=context).stream()
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dagster_dbt/core/dbt_event_iterator.py", line 202, in __next__
+    return next(self._inner_iterator)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dagster_dbt/core/dbt_cli_invocation.py", line 274, in _stream_asset_events
+    for event in self.stream_raw_events():
+                 ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dagster_dbt/core/dbt_cli_invocation.py", line 367, in stream_raw_events
+    self._raise_on_error()
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dagster_dbt/core/dbt_cli_invocation.py", line 460, in _raise_on_error
+    raise error
+[0m

@@ -1,0 +1,16 @@
+artifact_uri: file:///Users/ari/Desktop/github_repos/rec_sys/mlruns/396996832873759837/bbf9105ab2b849219e4828831612490c/artifacts
+deleted_time: 1737491374701
+end_time: 1737478972127
+entry_point_name: ''
+experiment_id: '396996832873759837'
+lifecycle_stage: deleted
+run_id: bbf9105ab2b849219e4828831612490c
+run_name: __ASSET_JOB
+run_uuid: bbf9105ab2b849219e4828831612490c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737478952353
+status: 3
+tags: []
+user_id: ari

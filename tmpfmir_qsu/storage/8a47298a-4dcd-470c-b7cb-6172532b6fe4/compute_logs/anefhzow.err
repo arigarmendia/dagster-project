@@ -1,0 +1,7 @@
+[32m2025-01-11 20:13:38 -0600[0m - dagster - [34mDEBUG[0m - get_data - 8a47298a-4dcd-470c-b7cb-6172532b6fe4 - 18607 - LOGS_CAPTURED - Started capturing logs in process (pid: 18607).
+[32m2025-01-11 20:13:38 -0600[0m - dagster - [34mDEBUG[0m - get_data - 8a47298a-4dcd-470c-b7cb-6172532b6fe4 - 18607 - movies - STEP_START - Started execution of step "movies".
+[32m2025-01-11 20:13:39 -0600[0m - dagster - [34mDEBUG[0m - get_data - 8a47298a-4dcd-470c-b7cb-6172532b6fe4 - 18607 - movies - STEP_OUTPUT - Yielded output "result" of type "DataFrame". (Type check passed).
+[32m2025-01-11 20:13:39 -0600[0m - dagster - [34mDEBUG[0m - get_data - 8a47298a-4dcd-470c-b7cb-6172532b6fe4 - movies - Writing file at: /Users/ari/Desktop/github_repos/rec_sys/tmpfmir_qsu/storage/movies using PickledObjectFilesystemIOManager...
+[32m2025-01-11 20:13:39 -0600[0m - dagster - [34mDEBUG[0m - get_data - 8a47298a-4dcd-470c-b7cb-6172532b6fe4 - 18607 - movies - ASSET_MATERIALIZATION - Materialized value movies.
+[32m2025-01-11 20:13:39 -0600[0m - dagster - [34mDEBUG[0m - get_data - 8a47298a-4dcd-470c-b7cb-6172532b6fe4 - 18607 - movies - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2025-01-11 20:13:39 -0600[0m - dagster - [34mDEBUG[0m - get_data - 8a47298a-4dcd-470c-b7cb-6172532b6fe4 - 18607 - movies - STEP_SUCCESS - Finished execution of step "movies" in 317ms.
