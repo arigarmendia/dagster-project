@@ -23,7 +23,6 @@ from ..resources import postgres_io_manager
 )
 def preprocessed_data(context, training_data:pd.DataFrame):
 
-
     u_unique = training_data.user_id.unique()
     user2Idx = {o:i+1 for i,o in enumerate(u_unique)}
     m_unique = training_data.movie_id.unique()
@@ -80,7 +79,7 @@ class MyModelConfig(Config):
    
 )
 def model_trained(context, config:MyModelConfig, X_train, y_train, user2Idx, movie2Idx):
-#def model_trained(context, X_train, y_train, user2Idx, movie2Idx):
+
     from .model_helper import get_model
     from keras.optimizers import Adam
     

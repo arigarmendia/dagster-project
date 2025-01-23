@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1737496020706
+current_stage: None
+description: null
+last_updated_timestamp: 1737496020706
+name: keras_dot_product_model
+run_id: 8df172387c4a4d77bcb8dcf809650241
+run_link: null
+source: file:///Users/ari/Desktop/github_repos/rec_sys/mlruns/396996832873759837/8df172387c4a4d77bcb8dcf809650241/artifacts/keras_dot_product_model
+status: READY
+status_message: null
+storage_location: file:///Users/ari/Desktop/github_repos/rec_sys/mlruns/396996832873759837/8df172387c4a4d77bcb8dcf809650241/artifacts/keras_dot_product_model
+user_id: null
+version: 2

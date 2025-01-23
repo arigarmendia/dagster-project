@@ -2,54 +2,61 @@
 from pathlib import Path
 import os
 import yaml
-from dagster import Definitions, check, define_asset_job, AssetSelection, ScheduleDefinition, load_assets_from_modules, fs_io_manager, AssetKey, materialize, file_relative_path, ConfigMapping, RunConfig
+from dagster import Definitions, define_asset_job, AssetSelection, ScheduleDefinition, load_assets_from_modules, fs_io_manager, file_relative_path
 #from rec_sys.assets.airbyte_assets import get_airbyte_assets
 #from dagster_airbyte import load_assets_from_airbyte_instance
 from dagster_mlflow import mlflow_tracking
 #from dagster_dbt import dbt_assets
-from rec_sys.assets import dbt, train_model
-from rec_sys.assets.train_model import MyModelConfig
-from rec_sys.resources import dbt_resource, postgres_io_manager, mlflow_resource # import the dbt resource
-from rec_sys.assets.airbyte import airbyte_assets
-#from rec_sys.configs import job_training_config
+from rec_sys.assets import my_dbt, train_model
+#from rec_sys.assets.train_model import MyModelConfig
+from rec_sys.resources import dbt_resource, postgres_io_manager
+from rec_sys.assets.airbyte import airbyte_connections
 
 
+# --------------Load config parameters from config.yml file--------------------#
 
-#print (f'Esta config recibe: {job_training_config}')
+# Load the cofigs.yml file (config parameters file)
+config_file_path = file_relative_path(__file__, "configs.yml")
+with open(config_file_path, "r") as file:
+    config_parameters = yaml.safe_load(file)
+
+# -------------------------------Load assets-----------------------------------#
 
 # Load dbt assets
-dbt_assets = load_assets_from_modules(modules=[dbt], group_name="raw_data_transformation") # Load the assets from the file
-
+dbt_assets = load_assets_from_modules(modules=[my_dbt], group_name="raw_data_transformation")
 
 # Load all training data assets
 training_data_assets = load_assets_from_modules(modules=[train_model])
 
-# Job to sync all resources
-sync_all = define_asset_job("sync_all", selection="*")
+# -------------------------------Define jobs-----------------------------------#
 
-# Load the YAML configuration
-config_file_path = file_relative_path(__file__, "job_training_config.yml")
-with open(config_file_path, "r") as file:
-    job_training_config = yaml.safe_load(file)
+# Job to sync the Airbyte connections
+airbyte_sync_job = define_asset_job("airbyte_sync_job" , selection=AssetSelection.groups("raw_data_ingestion"))
 
+# Job to orchestrate dbt
+dbt_sync_job = define_asset_job("dbt_sync_job" , selection=AssetSelection.groups("raw_data_transformation"))
 
+# Job to train and store the model
 model_job = define_asset_job(
-    "model_training", ["model_trained"]
+    "model_training", ["model_trained","model_stored"], # Just trying another way to select assets
     )
 
+# Job to sync all resources
+sync_all = define_asset_job("sync_all", selection="*")
+    
 
-# Asset definitions
+
+# -------------------------------Definitions-----------------------------------#
 defs = Definitions(
-    assets=[airbyte_assets, *dbt_assets, *training_data_assets],
-    jobs=[model_job, sync_all],
-    #jobs=[model_job],
+    assets=[airbyte_connections, *dbt_assets, *training_data_assets],
+    jobs=[airbyte_sync_job, dbt_sync_job, model_job, sync_all],
     resources={
         "dbt": dbt_resource,
         "postgres_io_manager": postgres_io_manager.configured({
             "connection_string": "env:POSTGRES_CONNECTION_STRING",
             "schema": "target"}),
-        "default_io_manager": fs_io_manager,
-        "mlflow": mlflow_tracking.configured({"experiment_name": "recommender_system"}),
+        #"default_io_manager": fs_io_manager,
+        "mlflow": mlflow_tracking.configured(config_parameters['mlflow']),
     },
     schedules=[
         ScheduleDefinition(
@@ -61,17 +68,7 @@ defs = Definitions(
             name="model_job_hourly",
             job=model_job,
             cron_schedule="@hourly",
-            run_config=RunConfig(
-                ops={
-                    "model_trained": MyModelConfig(
-                        batch_size=128,
-                        epochs=15,
-                        learning_rate= 1e-3,
-                        embeddings_dim=5,
-                    )
-                }
-            ).to_config_dict()
-
+            run_config=config_parameters['model_job_hourly']
         )
     ]
     

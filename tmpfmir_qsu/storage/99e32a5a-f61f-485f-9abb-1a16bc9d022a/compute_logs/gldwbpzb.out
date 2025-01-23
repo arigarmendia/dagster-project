@@ -1,0 +1,15 @@
+Running with dbt=1.8.8
+Registered adapter: postgres=1.9.0
+Unable to do partial parsing because of a version mismatch
+Found 4 models, 3 sources, 425 macros
+
+Concurrency: 1 threads (target='dev')
+
+1 of 1 START sql table model target.movies ..................................... [RUN]
+1 of 1 OK created sql table model target.movies ................................ [[32mSELECT 1344[0m in 0.16s]
+
+Finished running 1 table model in 0 hours 0 minutes and 0.39 seconds (0.39s).
+
+[32mCompleted successfully[0m
+
+Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1

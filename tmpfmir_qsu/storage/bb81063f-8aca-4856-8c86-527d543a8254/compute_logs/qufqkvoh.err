@@ -1,0 +1,33 @@
+[32m2025-01-22 15:23:11 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bb81063f-8aca-4856-8c86-527d543a8254 - 77151 - LOGS_CAPTURED - Started capturing logs in process (pid: 77151).
+[32m2025-01-22 15:23:11 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bb81063f-8aca-4856-8c86-527d543a8254 - 77151 - dbt_analytics - STEP_START - Started execution of step "dbt_analytics".
+[32m2025-01-22 15:23:11 -0600[0m - dagster - [34mINFO[0m - __ASSET_JOB - bb81063f-8aca-4856-8c86-527d543a8254 - dbt_analytics - A dbt subsetted execution is not being performed. Using the default dbt selection arguments `['--select', 'fqn:*']`.
+[32m2025-01-22 15:23:11 -0600[0m - dagster - [34mWARNING[0m - __ASSET_JOB - bb81063f-8aca-4856-8c86-527d543a8254 - dbt_analytics - An error was encountered when creating a handle to the dbt adapter in Dagster.
+Traceback (most recent call last):
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dagster_dbt/core/resource.py", line 672, in cli
+    adapter = self._initialize_adapter(cli_vars)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dagster_dbt/core/resource.py", line 364, in _initialize_adapter
+    profile = load_profile(self.project_dir, cli_vars, self.profile, self.target)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dbt/config/runtime.py", line 71, in load_profile
+    profile = Profile.render(
+              ^^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dbt/config/profile.py", line 403, in render
+    return cls.from_raw_profiles(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/dbt/config/profile.py", line 360, in from_raw_profiles
+    raise DbtProjectError("Could not find profile named '{}'".format(profile_name))
+dbt.exceptions.DbtProjectError: Runtime Error
+  Could not find profile named 'db_postgres'
+[32m2025-01-22 15:23:11 -0600[0m - dagster - [34mINFO[0m - __ASSET_JOB - bb81063f-8aca-4856-8c86-527d543a8254 - dbt_analytics - Copying `/Users/ari/Desktop/github_repos/db_postgres/target/partial_parse.msgpack` to `/Users/ari/Desktop/github_repos/db_postgres/target/dbt_analytics-bb81063-954168f/partial_parse.msgpack` to take advantage of partial parsing.
+[32m2025-01-22 15:23:11 -0600[0m - dagster - [34mINFO[0m - __ASSET_JOB - bb81063f-8aca-4856-8c86-527d543a8254 - dbt_analytics - Running dbt command: `dbt run --select fqn:*`.
+[32m2025-01-22 15:23:13 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bb81063f-8aca-4856-8c86-527d543a8254 - 77151 - dbt_analytics - STEP_OUTPUT - Yielded output "movies" of type "Nothing". (Type check passed).
+[32m2025-01-22 15:23:13 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bb81063f-8aca-4856-8c86-527d543a8254 - 77151 - dbt_analytics - ASSET_MATERIALIZATION - Materialized value movies.
+[32m2025-01-22 15:23:13 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bb81063f-8aca-4856-8c86-527d543a8254 - 77151 - dbt_analytics - STEP_OUTPUT - Yielded output "scores" of type "Nothing". (Type check passed).
+[32m2025-01-22 15:23:13 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bb81063f-8aca-4856-8c86-527d543a8254 - 77151 - dbt_analytics - ASSET_MATERIALIZATION - Materialized value scores.
+[32m2025-01-22 15:23:13 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bb81063f-8aca-4856-8c86-527d543a8254 - 77151 - dbt_analytics - STEP_OUTPUT - Yielded output "users" of type "Nothing". (Type check passed).
+[32m2025-01-22 15:23:13 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bb81063f-8aca-4856-8c86-527d543a8254 - 77151 - dbt_analytics - ASSET_MATERIALIZATION - Materialized value users.
+[32m2025-01-22 15:23:14 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bb81063f-8aca-4856-8c86-527d543a8254 - 77151 - dbt_analytics - STEP_OUTPUT - Yielded output "scores_movies_users" of type "Nothing". (Type check passed).
+[32m2025-01-22 15:23:14 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bb81063f-8aca-4856-8c86-527d543a8254 - 77151 - dbt_analytics - ASSET_MATERIALIZATION - Materialized value scores_movies_users.
+[32m2025-01-22 15:23:14 -0600[0m - dagster - [34mINFO[0m - __ASSET_JOB - bb81063f-8aca-4856-8c86-527d543a8254 - dbt_analytics - Finished dbt command: `dbt run --select fqn:*`.
+[32m2025-01-22 15:23:14 -0600[0m - dagster - [34mDEBUG[0m - __ASSET_JOB - bb81063f-8aca-4856-8c86-527d543a8254 - 77151 - dbt_analytics - STEP_SUCCESS - Finished execution of step "dbt_analytics" in 3.41s.

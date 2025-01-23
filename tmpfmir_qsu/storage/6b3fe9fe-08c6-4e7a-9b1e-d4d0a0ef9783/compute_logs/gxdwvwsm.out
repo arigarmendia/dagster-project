@@ -1,0 +1,22 @@
+Running with dbt=1.8.8
+Registered adapter: postgres=1.9.0
+Unable to do partial parsing because of a version mismatch
+Found 4 models, 3 sources, 425 macros
+
+Concurrency: 1 threads (target='dev')
+
+1 of 1 START sql table model target.movies ..................................... [RUN]
+1 of 1 ERROR creating sql table model target.movies ............................ [[31mERROR[0m in 0.06s]
+
+Finished running 1 table model in 0 hours 0 minutes and 0.32 seconds (0.32s).
+
+[31mCompleted with 1 error and 0 warnings:[0m
+
+  Database Error in model movies (models/movies.sql)
+  column "Film-Noir" does not exist
+  LINE 46:     CAST(CAST("Film-Noir" AS INT) AS BOOLEAN) AS film_noir,
+                         ^
+  HINT:  Perhaps you meant to reference the column "movies.Film_Noir".
+  compiled code at target/dbt_analytics-6b3fe9f-bad80db/run/db_postgres/models/movies.sql
+
+Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
