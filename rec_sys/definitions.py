@@ -36,9 +36,11 @@ airbyte_sync_job = define_asset_job("airbyte_sync_job" , selection=AssetSelectio
 # Job to orchestrate dbt
 dbt_sync_job = define_asset_job("dbt_sync_job" , selection=AssetSelection.groups("raw_data_transformation"))
 
-# Job to train and store the model
+data_prep_job = define_asset_job("data_prep_job", selection=AssetSelection.groups("data_preparation"))
+
+# Job to train, eval and storte the model
 model_job = define_asset_job(
-    "model_training", ["model_trained","model_stored"], # Just trying another way to select assets
+    "model_training", ["model_trained","model_stored", "model_metrics"], # Just trying another way to select assets
     )
 
 # Job to sync all resources
@@ -47,9 +49,10 @@ sync_all = define_asset_job("sync_all", selection="*")
 
 
 # -------------------------------Definitions-----------------------------------#
+
 defs = Definitions(
     assets=[airbyte_connections, *dbt_assets, *training_data_assets],
-    jobs=[airbyte_sync_job, dbt_sync_job, model_job, sync_all],
+    jobs=[airbyte_sync_job, dbt_sync_job, data_prep_job, model_job, sync_all],
     resources={
         "dbt": dbt_resource,
         "postgres_io_manager": postgres_io_manager.configured({
@@ -63,6 +66,7 @@ defs = Definitions(
             name="sync_all_assets_daily",
             job=sync_all,
             cron_schedule="@daily",
+            
         ),
         ScheduleDefinition(
             name="model_job_hourly",

@@ -1,0 +1,18 @@
+[32m2025-01-23 14:56:28 -0600[0m - dagster - [34mDEBUG[0m - model_training - 6b4635a6-9052-4405-98e9-fc5c35fe181f - 13781 - LOGS_CAPTURED - Started capturing logs in process (pid: 13781).
+[32m2025-01-23 14:56:28 -0600[0m - dagster - [34mDEBUG[0m - model_training - 6b4635a6-9052-4405-98e9-fc5c35fe181f - 13781 - model_stored - STEP_START - Started execution of step "model_stored".
+[32m2025-01-23 14:56:28 -0600[0m - dagster - [34mDEBUG[0m - model_training - 6b4635a6-9052-4405-98e9-fc5c35fe181f - model_stored - Loading file from: /Users/ari/Desktop/github_repos/rec_sys/tmpfmir_qsu/storage/model_trained using PickledObjectFilesystemIOManager...
+/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/keras/src/layers/layer.py:938: UserWarning: Layer 'FlattenMovies' (of type Flatten) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+/Users/ari/opt/miniconda3/envs/dagster-rs/lib/python3.12/site-packages/keras/src/layers/layer.py:938: UserWarning: Layer 'FlattenUsers' (of type Flatten) was passed an input with a mask attached to it. However, this layer does not support masking and will therefore destroy the mask information. Downstream layers will not see the mask.
+  warnings.warn(
+[32m2025-01-23 14:56:31 -0600[0m - dagster - [34mDEBUG[0m - model_training - 6b4635a6-9052-4405-98e9-fc5c35fe181f - 13781 - model_stored - LOADED_INPUT - Loaded input "model_trained" using input manager "io_manager", from output "result" of step "model_trained"
+[32m2025-01-23 14:56:31 -0600[0m - dagster - [34mDEBUG[0m - model_training - 6b4635a6-9052-4405-98e9-fc5c35fe181f - 13781 - model_stored - STEP_INPUT - Got input "model_trained" of type "Any". (Type check passed).
+2025/01/23 14:56:31 WARNING mlflow.tensorflow: You are saving a TensorFlow Core model or Keras model without a signature. Inference with mlflow.pyfunc.spark_udf() will not work unless the model's pyfunc representation accepts pandas DataFrames as inference inputs.
+[31m2025/01/23 14:56:36 WARNING mlflow.models.model: Model logged without a signature and input example. Please set `input_example` parameter when logging the model to auto infer the model signature.[0m
+Registered model 'keras_dot_product_model' already exists. Creating a new version of this model...
+Created version '14' of model 'keras_dot_product_model'.
+[32m2025-01-23 14:56:36 -0600[0m - dagster - [34mDEBUG[0m - model_training - 6b4635a6-9052-4405-98e9-fc5c35fe181f - 13781 - model_stored - STEP_OUTPUT - Yielded output "result" of type "Any". (Type check passed).
+[32m2025-01-23 14:56:36 -0600[0m - dagster - [34mDEBUG[0m - model_training - 6b4635a6-9052-4405-98e9-fc5c35fe181f - model_stored - Writing file at: /Users/ari/Desktop/github_repos/rec_sys/tmpfmir_qsu/storage/model_stored using PickledObjectFilesystemIOManager...
+[32m2025-01-23 14:56:36 -0600[0m - dagster - [34mDEBUG[0m - model_training - 6b4635a6-9052-4405-98e9-fc5c35fe181f - 13781 - model_stored - ASSET_MATERIALIZATION - Materialized value model_stored.
+[32m2025-01-23 14:56:36 -0600[0m - dagster - [34mDEBUG[0m - model_training - 6b4635a6-9052-4405-98e9-fc5c35fe181f - 13781 - model_stored - HANDLED_OUTPUT - Handled output "result" using IO manager "io_manager"
+[32m2025-01-23 14:56:36 -0600[0m - dagster - [34mDEBUG[0m - model_training - 6b4635a6-9052-4405-98e9-fc5c35fe181f - 13781 - model_stored - STEP_SUCCESS - Finished execution of step "model_stored" in 8.15s.

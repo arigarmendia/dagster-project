@@ -1,8 +1,9 @@
 artifact_uri: file:///Users/ari/Desktop/github_repos/rec_sys/mlruns/396996832873759837/8df172387c4a4d77bcb8dcf809650241/artifacts
+deleted_time: 1738077889592
 end_time: 1737496020745
 entry_point_name: ''
 experiment_id: '396996832873759837'
-lifecycle_stage: active
+lifecycle_stage: deleted
 run_id: 8df172387c4a4d77bcb8dcf809650241
 run_name: __ASSET_JOB
 run_uuid: 8df172387c4a4d77bcb8dcf809650241
