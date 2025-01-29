@@ -1,3 +1,14 @@
+## Pipeline MPLOPs con Dagster
+
+### Diagrama del sistema implementado:
+
+![Sistema implementado](images/diagrama_sistema.png)
+
+### Pipeline completa en Dagster
+
+![Dagster Pipeline](images/dagster_pipeline.png)
+
+
 # rec_sys
 
 This is a [Dagster](https://dagster.io/) project scaffolded with [`dagster project scaffold`](https://docs.dagster.io/getting-started/create-new-project).
