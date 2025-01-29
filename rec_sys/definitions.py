@@ -3,12 +3,8 @@ from pathlib import Path
 import os
 import yaml
 from dagster import Definitions, define_asset_job, AssetSelection, ScheduleDefinition, load_assets_from_modules, fs_io_manager, file_relative_path
-#from rec_sys.assets.airbyte_assets import get_airbyte_assets
-#from dagster_airbyte import load_assets_from_airbyte_instance
 from dagster_mlflow import mlflow_tracking
-#from dagster_dbt import dbt_assets
 from rec_sys.assets import my_dbt, train_model
-#from rec_sys.assets.train_model import MyModelConfig
 from rec_sys.resources import dbt_resource, postgres_io_manager
 from rec_sys.assets.airbyte import airbyte_connections
 
@@ -47,7 +43,6 @@ model_job = define_asset_job(
 sync_all = define_asset_job("sync_all", selection="*")
     
 
-
 # -------------------------------Definitions-----------------------------------#
 
 defs = Definitions(
@@ -58,9 +53,9 @@ defs = Definitions(
         "postgres_io_manager": postgres_io_manager.configured({
             "connection_string": "env:POSTGRES_CONNECTION_STRING",
             "schema": "target"}),
-        #"default_io_manager": fs_io_manager,
         "mlflow": mlflow_tracking.configured(config_parameters['mlflow']),
     },
+    # Creating 2 schedules to test
     schedules=[
         ScheduleDefinition(
             name="sync_all_assets_daily",

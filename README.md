@@ -1,4 +1,4 @@
-## Pipeline MPLOPs con Dagster
+## Pipeline MLOPs con Dagster
 
 ### Diagrama del sistema implementado:
 

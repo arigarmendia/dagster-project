@@ -2,30 +2,21 @@ import os
 
 import pandas as pd
 import sqlalchemy
-from dotenv import load_dotenv
 
 from dagster import EnvVar, IOManager, io_manager
 from dagster_airbyte import AirbyteResource
 from dagster_dbt import DbtCliResource
 
-# Load environment variables from .env file
-load_dotenv()
 
-#airbyte_instance = AirbyteResource(
+
+# Using Dagster EnVar function to read env variables from .env file 
+
 airbyte_resource = AirbyteResource(
     host=EnvVar("AIRBYTE_HOST"),
     port=EnvVar("AIRBYTE_PORT"),
     username=EnvVar("AIRBYTE_USERNAME"),
     password=EnvVar("AIRBYTE_PASSWORD"),
 )
-
-# #airbyte_instance = AirbyteResource(
-# airbyte_resource = AirbyteResource(
-#     host=os.getenv("AIRBYTE_HOST"),
-#     port=os.getenv("AIRBYTE_PORT"),
-#     username=os.getenv("AIRBYTE_USERNAME"),
-#     password=os.getenv("AIRBYTE_PASSWORD"),
-# )
 
 
 # Define dbt cli resource
